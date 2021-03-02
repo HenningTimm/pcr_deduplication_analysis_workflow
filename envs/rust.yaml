@@ -1,0 +1,13 @@
+name: rust_env
+channels:
+- bioconda
+- conda-forge
+- defaults
+
+dependencies:
+- rust >=1.40
+- gsl
+- openssl
+- libopenblas
+- zlib
+- pkg-config

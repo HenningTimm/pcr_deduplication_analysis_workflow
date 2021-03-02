@@ -1,0 +1,6 @@
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - rust-bio-tools =0.8.0
+  - starcode =1.3

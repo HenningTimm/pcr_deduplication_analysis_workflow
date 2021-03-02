@@ -1,0 +1,34 @@
+# Test dataset with generic individual names.
+# p5 barcodes
+1	ATCACG
+2	CGATGT
+3	TTAGGC
+4	TGACCA
+5	ACAGTG
+6	GCCAAT
+7	CAGATC
+8	ACTTGA
+9	GATCAG
+10	TAGCTT
+11	GGCTAC
+12	CTTGTA
+13	AGTCAA
+14	AGTTCC
+15	ATGTCA
+16	CCGTCC
+18	GTCCGC
+19	GTGAAA
+20	GTGGCC
+21	GTTTCG
+22	CGTACG
+23	GAGTGG
+25	ACTGAT
+27	ATTCCT
+
+# p7 barcodes
+1	ATCACG
+
+
+# individuals
+1	1			Individual_A	Annotation 1
+22	1			Individual_B	Annotation 2

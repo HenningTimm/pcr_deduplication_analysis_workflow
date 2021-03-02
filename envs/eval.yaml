@@ -1,0 +1,11 @@
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - numpy >=1.17
+  - dinopy >=2.0.3
+  - matplotlib
+  - seaborn
+  - pyyaml
+  - pysam
+  - pillow

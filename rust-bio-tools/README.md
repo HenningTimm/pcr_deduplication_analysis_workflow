@@ -1,3 +1,9 @@
+# Notice of modification
+
+This version of rust-bio-tools has been modified to be able to interpret ddRAGE name line annotations.
+These modifications were applied on top of rust-bio-tools [0.9.1-alpha.0](https://github.com/rust-bio/rust-bio-tools/commit/ea04a402644406788fbccbce44331c4a065b6c0c).
+
+
 # Rust-Bio-Tools
 
 [![Travis](https://img.shields.io/travis/rust-bio/rust-bio-tools/master.svg?style=flat-square)](https://travis-ci.org/rust-bio/rust-bio-tools)

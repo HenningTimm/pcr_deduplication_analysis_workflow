@@ -14,18 +14,14 @@ def plot_scatter():
     g = sns.FacetGrid(wide_df, row="Max. sequence distance", col="Max. DBR distance",
                       height=2.5, aspect=2.2)
     g = g.map(plt.scatter, "real", "after_dedup", alpha=0.25)
-    # g = g.map(plt.hexbin, "real", "after_dedup", cmap="Blues", linewidths=0.0)
     g.set_axis_labels("Simulated Locus Coverage", "Locus Coverage\nAfter Deduplication")
     print(g, dir(g))
     for row in g.axes:
         for x in row:
-            # print(x, dir(x))
             x.plot([0, 40], [0, 40], alpha=0.75, color="r")
     
-    # ax = sns.catplot(x="real", y="after_dedup", data=tidy_df)
     sns.set(font_scale=0.5)
     sns.despine()
     plt.savefig(snakemake.output.scatter, dpi=200)
-    # plt.savefig(snakemake.output.scatter, dpi=300)
 
 plot_scatter()

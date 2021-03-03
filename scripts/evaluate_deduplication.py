@@ -4,7 +4,6 @@ import dinopy as dp
 import re
 import pysam
 
-
 class PCRRecord:
 
     def __init__(self, ):
@@ -13,10 +12,6 @@ class PCRRecord:
 
     def __repr__(self):
         return f"real: {self.real:>10} pcr copies: {self.pcr:>10}"
-
-
-
-
 
 
 def parse_info_line(inf_line):
@@ -87,7 +82,7 @@ def get_dedup_coverages(fq_file):
             raise ValueError("BAD NAME. No matches")
         if singleton is not None  and consensus:
             raise ValueError("BAD NAME. Two matches")
-    # print(sorted(locus_coverage_counter.items()))
+
     loci, coverage = zip(*locus_coverage_counter.items())
     df = pd.DataFrame({
         "locus": loci,
@@ -96,34 +91,6 @@ def get_dedup_coverages(fq_file):
     return df
 
 
-
-# def compare_locus_numbers(pcr_counts, bam_file, out_file):
-#     # print(pcr_counts)
-#     df = pd.DataFrame(columns=["locus", "real", "pcr_copies", "after_dedup"])
-#     with pysam.AlignmentFile(bam_file) as sam_file:
-#         for locus, counts in pcr_counts.items():
-#             if locus.startswith("singleton"):
-#                 continue
-#             name = f"Locus_{locus}"
-#             # print(locus, name)
-#             reads_after_dedup = 0
-#             for _ in sam_file.fetch(name):
-#                 reads_after_dedup += 1
-#             # print(counts, reads_after_dedup)
-#             df = df.append(
-#                 {
-#                     "locus": name,
-#                     "real": counts.real,
-#                     "pcr_copies": counts.pcr,
-#                     "after_dedup": reads_after_dedup
-#                 },
-#                 ignore_index=True,
-#             )
-#     with open(out_file, "w") as csv_file:
-#         csv_file.write(df.to_csv(index=False))
-
-
-        
 def compare_locus_numbers(pcr_counts, dedup_covs, out_file):
     # parse the default dict assembled above
     count_df = pd.DataFrame(columns=["locus", "real", "pcr_copies"])
@@ -146,5 +113,4 @@ def compare_locus_numbers(pcr_counts, dedup_covs, out_file):
 
 pcr_counts = parse_fq_file(snakemake.input.fq1)
 dedup_covs = get_dedup_coverages(snakemake.input.fq1_dedup)
-# compare_locus_numbers(pcr_counts, snakemake.input.bam, snakemake.output.csv)
 compare_locus_numbers(pcr_counts, dedup_covs, snakemake.output.csv)

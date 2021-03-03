@@ -3,7 +3,6 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import os
 import re
-# plt.switch_backend('agg')
 
 
 def tuftefy(ax):
@@ -37,8 +36,6 @@ def plot_bars(data):
 
 
 def plot_violins(tidy_df):
-    # print(tidy_df)
-    # sns.set(font_scale=2)
     sns.set(font_scale=1.5, style="whitegrid")
 
     tidy_df = tidy_df.rename(columns={
@@ -50,13 +47,9 @@ def plot_violins(tidy_df):
                      col="Max. DBR distance", kind="violin", aspect=2.2,
                      data=tidy_df[tidy_df["type"] != "pcr_copies"])
     cat.set_axis_labels("Read Types", "Locus Coverage")
-    # tuftefy(ax)
     
     sns.despine()
     plt.savefig(snakemake.output.violins_pdf)
-    # plt.show()
-
-
 
 
 def get_params(filename):
@@ -68,7 +61,6 @@ def get_params(filename):
     params = dict()
     for key, value in re.findall("_(\S{2}):(\S)", filename):
         params[translation[key]] = value
-        # params.append(f"{translation[key]}: {value}")
     return params
 
 
@@ -101,6 +93,5 @@ for csv_file in snakemake.input.csvs:
 with open(snakemake.output.wide_df, "w") as wide_df:
     wide_df.write(data.to_csv(index=False))
 
-# plot_bars(data)
 plot_violins(tidy_data)
-# plot_scatter(data)
+

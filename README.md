@@ -29,5 +29,4 @@ Execute the workflow with:
 snakemake --use-conda --jobs <nr cores>
 ```
 
-
-
+The starcode parameters for umi and sequence distances can be configured by editing the file `config.yaml`.

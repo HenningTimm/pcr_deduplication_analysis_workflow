@@ -1,3 +1,5 @@
+configfile: "config.yaml"
+
 rule all:
     input:
         "plots/ddRAGEdataset_violins.pdf",
@@ -89,8 +91,8 @@ rule evaluate:
 rule plot_locus_results:
     input:
         csvs=expand("results/{{filename}}_ud:{umi_max_dist}_sd:{max_seq_dist}_results.csv",
-                   umi_max_dist=[1, 2],
-                   max_seq_dist=[1, 2, 3, 4, 6, 8],
+                   umi_max_dist=config["params"]["umi_max_dist"],
+                   max_seq_dist=config["params"]["max_seq_dist"],
         )
     output:
         violins_pdf="plots/{filename}_violins.pdf",

@@ -1,0 +1,11 @@
+params:
+  umi_max_dist:
+    - 1
+    - 2
+  max_seq_dist:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 6
+    - 8

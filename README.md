@@ -19,7 +19,7 @@ We recommend installing `snakemake` via the conda package manager using the bioc
 ```bash
 conda install -c conda-forge -c bioconda snakemake
 ```
-This workflow was tested with `snakemake==5.20.1` on Ubuntu.
+This workflow was tested with `snakemake==5.20.1` and `snakemake==5.29.0` on Ubuntu.
 
 The workflow creates approximately 25 GB of intermediate files.
 

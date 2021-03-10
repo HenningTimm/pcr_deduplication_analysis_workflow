@@ -5,7 +5,8 @@ For this evaluation, modifications to to the `call-consensus-reads` source code 
 
 ## Versions
 The release version 1.0.0 is a streamlined version of the code used to generate the plots in Section 7.4.3 of my dissertation.
-For easier reproducibility and archival, version 1.1.0 will contain only the parts of rust bio tools actually used in the evaluation, thus reducing unneeded dependencies.
+For easier reproducibility and archival, version 1.1.0 contains only the parts of rust bio tools actually used in the evaluation, thus reducing unneeded dependencies.
+Note that version 1.1.0 is functionally identical to version 1.0.0.
 
 ## Requirements
 
